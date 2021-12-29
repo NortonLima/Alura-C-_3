@@ -6,24 +6,32 @@ namespace ByteBank
     {
         static void Main(string[] args)
         {
+
+
+            CalculateBonus();
+
+            Console.ReadLine();
+
+        }
+
+        public static void CalculateBonus()
+        {
             BonusManager Manager = new BonusManager();
 
-            Employee Carlos = new Employee("Carlos", "012.321.452-8", 3000);
-            Director Hans = new Director("Hans", "098.123.534-32", 15000);
-            Manager.BonusRegister(Carlos);
-            Manager.BonusRegister(Hans);
+            Designer Pedro = new Designer("Pedro", "012.321.452-8");
 
+            Director Roberta = new Director("Roberta", "098.123.534-32");
 
-            Console.WriteLine("Employee: " + Carlos.Name);
-            Console.WriteLine("Current Wage: R$ " + Carlos.Wage);
-            Console.WriteLine(" ");
+            AccountManager Camila = new AccountManager("Camila", "543.674.352-43");
 
-            Console.WriteLine("Director: " + Hans.Name);
-            Console.WriteLine("Current Wage: R$ " + Hans.Wage);
-            Console.WriteLine(" ");
+            Assistant Igor = new Assistant("Igor", "093.985.345-98");
 
-            Console.WriteLine("Total Bonus Paid this year = R$ " + Manager.GetTotalBonusPaid());
-            Console.ReadLine();
+            Manager.BonusRegister(Pedro);
+            Manager.BonusRegister(Roberta);
+            Manager.BonusRegister(Camila);
+            Manager.BonusRegister(Igor);
+
+            Console.WriteLine("Total Bonus Paid this Year = U$$ " + Manager.GetTotalBonusPaid());
 
         }
     }
